@@ -1,0 +1,261 @@
+/* Top Nav */
+#top, .top-navigation {
+	display: none;
+}
+
+/* Navigation */
+ul.nav { // Styles applied to all instances of navigation
+	li {
+		a {
+			padding:.53em 1em;
+			display: block;
+			//font-weight: bold;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		&.current-menu-item {
+			> a {
+				background: lighten(@bg_light, 10%);
+				color: @color_body;
+			}
+		}
+	}
+}
+
+// the main nav
+#navigation {
+	clear:both;
+	margin-bottom: 2.618em;
+	width:80%;
+	left:-80%;
+	position: absolute;
+	top:0;
+	height:100%;
+	z-index: 999;
+	background: @color_body - #222;
+	padding-top:4.236em;
+	.inset_box_shadow(-1.618em,0,1.618em,-1em,@color_body - #333);
+	// The search bar
+	.widget_product_search {
+		margin:0;
+		border-top:1px solid @color_body - #333;
+		#searchform {
+			border-left:0;
+			border-right:0;
+			.border_radius(0);
+			padding:.618em 1em;
+			margin:0;
+			border-bottom:1px solid @color_body - #333;
+			border-top:1px solid @color_body - #111;
+			.vertical_gradient(@color_body - #1a1a1a, @color_body - #222);
+			#s {
+				padding:.202em .857em;
+				.border_radius(4em);
+				.vertical_gradient(@color_body - #111, @color_body - #0a0a0a);
+				border:1px solid @color_body - #333;
+				color: @color_body + #444;
+				-webkit-box-shadow:
+					inset 0 1px 3px @color_body - #222,
+					0 1px 1px @color_body - #111;
+				box-shadow:
+					inset 0 1px 3px @color_body - #222,
+					0 1px 1px @color_body - #111;
+			}
+			#searchsubmit {
+				display: none;
+			}
+		}
+	}
+	h3 {
+		border-bottom:1px solid @color_body - #333;
+		border-top:1px solid @color_body + #0a0a0a;
+		.vertical_gradient(@color_body, @color_body - #111);
+		padding:.382em 1em;
+		font-size:.857em;
+		margin:0;
+		text-transform: uppercase;
+		color: @color_body + #555;
+		text-shadow:0 1px 0 @color_body - #333;
+	}
+	ul.nav {
+		list-style: none;
+		margin-bottom:0;
+		li {
+			list-style: none;
+			a {
+				border-bottom:1px solid @color_body - #333;
+				border-top:1px solid @color_body - #1a1a1a;
+				color: @color_body + #222;
+				-webkit-tap-highlight-color: @color_links;
+				text-shadow:0 -1px 0 @color_body - #333;
+			}
+			&.current-menu-item {
+				> a {
+					.vertical_gradient(@color_body - #1a1a1a, @color_body - #222);
+					color: @bg_light;
+					text-shadow:0 1px @color_body - #333;
+					border:0;
+					-webkit-box-shadow:
+						inset 0 1px @color_body - #111,
+						inset 0 -1px @color_body - #333;
+					box-shadow:
+						inset 0 1px @color_body - #111,
+						inset 0 -1px @color_body - #333;
+					&:after {
+						.iconafter( "\f054" );
+						font-size:.875em;
+						float: right;
+						line-height: 2;
+					}
+				}
+			}
+		}
+		ul {
+			margin:0;
+			li {
+				a {
+					padding-left:1.618em;
+				}
+				ul {
+					li {
+						a {
+							padding-left:2.618em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nav-close, .nav-home {
+		position:absolute;
+		top:1em;
+		left:1em;
+		cursor: pointer;
+		&:after {
+			.iconafter( "\f00d" );
+			.vertical_gradient(@color_body - #222, @color_body - #2a2a2a);
+			height:1.5em;
+			width:1.5em;
+			text-align: center;
+			line-height: 1.5;
+			font-size:1.618em;
+			.border_radius(2px);
+			margin-left:0;
+			color: @color_body + #222;
+			text-shadow:0 -1px 0 @color_body - #444;
+			-webkit-box-shadow:
+				inset 0 0 1px 1px @color_body - #444,
+				inset 0 2px @color_body - #111,
+				0 1px @color_body - #111;
+			box-shadow:
+				inset 0 0 1px 1px @color_body - #444,
+				inset 0 2px @color_body - #111,
+				0 1px @color_body - #111;
+		}
+
+		span {
+			display: none;
+		}
+	}
+	.nav-home {
+		left:auto;
+		right:1em;
+		&:after {
+			content: "\f015";
+		}
+	}
+
+	ul.rss {
+		li {
+			display: inline;
+			padding:0;
+			a {
+				&:after {
+					.iconafter( "\f09e" );
+					color: orange;
+					float: right;
+					line-height: 1.618;
+				}
+			}
+			&.sub-email {
+				color: @color_body;
+				a  {
+					&:after  {
+						content: "\f003";
+					}
+				}
+			}
+		}
+	}
+}
+
+.show-nav {
+	#navigation {
+		.top-navigation {
+			display: block;
+		}
+	}
+	#inner-wrapper {
+		left:80%;
+		.border_radius(.618em);
+	}
+}
+
+// Modernizr detects 3d transforms and then uses it to greatly enhance animation performance
+@media only screen and (max-width: 767px) {
+	.csstransforms3d.csstransitions {
+		#navigation {
+			left: 0;
+		    -webkit-transform: translate3d(-100%, 0, 0);
+		    -moz-transform: translate3d(-100%, 0, 0);
+		    -ms-transform: translate3d(-100%, 0, 0);
+		    -o-transform: translate3d(-100%, 0, 0);
+		    transform: translate3d(-100%, 0, 0);
+		    -webkit-backface-visibility: hidden;
+		    -moz-backface-visibility: hidden;
+		    -ms-backface-visibility: hidden;
+		    -o-backface-visibility: hidden;
+		    backface-visibility: hidden;
+		}
+		#inner-wrapper {
+			left: 0 !important;
+		    -webkit-transform: translate3d(0, 0, 0);
+		    -moz-transform: translate3d(0, 0, 0);
+		    -ms-transform: translate3d(0, 0, 0);
+		    -o-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		    -webkit-transition: -webkit-transform 200ms ease;
+		    -moz-transition: -moz-transform 200ms ease;
+		    -o-transition: -o-transform 200ms ease;
+		    transition: transform 200ms ease;
+		    -webkit-backface-visibility: hidden;
+		    -moz-backface-visibility: hidden;
+		    -ms-backface-visibility: hidden;
+		    -o-backface-visibility: hidden;
+		    backface-visibility: hidden;
+		}
+		.show-nav {
+			#navigation {
+				-webkit-transform: translate3d(-100%, 0, 0);
+			    -moz-transform: translate3d(-100%, 0, 0);
+			    -ms-transform: translate3d(-100%, 0, 0);
+			    -o-transform: translate3d(-100%, 0, 0);
+			    transform: translate3d(-100%, 0, 0);
+			}
+			#inner-wrapper {
+			    -webkit-transform: translate3d(80%, 0, 0);
+			    -moz-transform: translate3d(80%, 0, 0);
+			    -ms-transform: translate3d(80%, 0, 0);
+			    -o-transform: translate3d(80%, 0, 0);
+			    transform: translate3d(80%, 0, 0);
+			    -webkit-transform-origin: 50% 0%;
+			    -moz-transform-origin: 50% 0%;
+			    -ms-transform-origin: 50% 0%;
+			    -o-transform-origin: 50% 0%;
+			    transform-origin: 50% 0%;
+			}
+		}
+	}
+}

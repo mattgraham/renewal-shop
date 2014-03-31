@@ -1,0 +1,125 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.widget_woothemes_testimonials  {
+	.quote  {
+	    width: 100%;
+	    list-style: none;
+	    margin-bottom: 2.618em;
+	    float: left;
+	    blockquote {
+	    	border: .146em solid @border_main !important;
+	    	.border_radius( .327em );
+	    	padding: 1em !important;
+	    	margin:0 !important;
+	    	position: relative;
+	    	background: #fff;
+	    	&:before {
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 7px 7px 0 7px;
+				border-color: #fff transparent transparent transparent;
+				position: absolute;
+				top: 100%;
+				left: 1em;
+				z-index: 10001;
+	    	}
+	    	&:after {
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px 10px 0 10px;
+				border-color: @border_main transparent transparent transparent;
+				position: absolute;
+				top: 100%;
+				left: .857em;
+				z-index: 10000;
+	    	}
+	    }
+	    a.avatar-link  {
+	    	position: relative;
+	    	display: inline-block;
+	    	float: left;
+	    	width:50px;
+	    	height:50px;
+	    	margin: 1.618em 1.618em 1.618em 0;
+	    	img {
+	    		padding: .236em;
+				border: 1px solid @border_main;
+	    		.border_radius(100%);
+	    		width:100%;
+	    		height: auto;
+	    		.borderbox;
+	    	}
+	    }
+	    .author  {
+	    	display: block;
+	    	margin: 1.618em 0 0 0;
+	    	font-weight: 700;
+	    	font-style: normal;
+	    	.excerpt  {
+	    		display: block;
+	    		font-weight: normal;
+	    		font-style: italic;
+	    	}
+	    	.url  {
+	    		display: block;
+	    		font-weight: 400;
+	    		a  {
+	    			color: lighten(@color_body, 20%);
+	    		}
+	    	}
+	    }
+	}
+}
+
+// Layout
+@media only screen and (min-width: 768px) {
+	#content {
+		.widget_woothemes_testimonials {
+			.columns-2, .columns-3, .columns-4, .columns-5, .columns-6 {
+				.clearfix;
+				.quote {
+					float: left;
+					margin-right:3.8%;
+					&.first {
+						clear: both;
+					}
+					&.last {
+						margin-right:0;
+					}
+				}
+			}
+			.columns-2 {
+				.quote {
+					width:48%;
+				}
+			}
+			.columns-3 {
+				.quote {
+					width:30.75%;
+				}
+			}
+			.columns-4 {
+				.quote {
+					width:22.05%;
+				}
+			}
+			.columns-5 {
+				.quote {
+					width:16.9%;
+				}
+			}
+			.columns-6 {
+				.quote {
+					width:13.5%;
+				}
+			}
+		}
+	}
+}

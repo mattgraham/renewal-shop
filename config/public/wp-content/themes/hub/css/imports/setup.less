@@ -1,0 +1,193 @@
+/* Defaults */
+html {
+	font-size: 62.5%; // Reset font size to 10px for easy calculation
+}
+body  {
+	font-size: 1.6em; // 16 px
+	line-height: 1.618; // golden ratio
+	color: @color_body;
+	font-family: @font_text;
+	font-weight: 500;
+	-webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	background: @color_body - #333;
+	word-wrap:break-word;
+}
+
+#wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	overflow: hidden;
+}
+
+#inner-wrapper {
+	position: relative;
+	width: 100%;
+	.borderbox;
+	.transition(left,ease,.5s);
+	background: #fff;
+}
+
+
+/* Wrapper */
+.wrapper {
+	padding: 0 2.244em;
+}
+
+::selection, ::-moz-selection  {
+	background: @color_links;
+	color: #fff;
+}
+
+img  { vertical-align: bottom; max-width: 100%; -webkit-transform: translateZ(0) scale(1.0, 1.0); }
+hr { background-color: @border_main; border:0; height: 1px; margin: 1.618em 0; }
+
+/* Hyperlinks */
+
+a {
+	color: @color_links;
+	text-decoration:none;
+
+	&:hover {
+		color: @color_links - #222;
+		text-decoration: none;
+	}
+
+	img {
+	}
+}
+
+/* Typography */
+/*
+	All typography (and layout) based on a modular scale using 12 & 14 px values scaled in accordance the golden ratio (1.618)
+	http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
+	Remember to keep margins consistent and try to avoid margin-top. If everything has an appropriate margin-bottom we don't need one and vertical rhythm will be kept consistent
+*/
+
+h1, h2, h3, h4, h5, h6  {
+	font-family: @font_headings;
+	color: @color_headings;
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+h1  {
+	font-size: 2.244em;
+	line-height: 1.387em;
+	margin: 0 0 .327em;
+}
+h2  {
+	font-size: 1.618em;
+	line-height: 1.387em;
+	margin: 0 0 .53em;
+
+}
+h3  {
+	font-size: 1.387em;
+	margin: 0 0 .618em;
+}
+h4  {
+	font-size: 1em;
+	margin: 0 0 .857em;
+}
+h5  {
+	font-size: .857em;
+	margin: 0 0 1em;
+}
+h6  {
+	font-size: .618em;
+	margin: 0 0 1.387em;
+}
+p {
+	-webkit-hyphens : auto;
+	-webkit-hyphenate-character : "\2010";
+	-webkit-hyphenate-limit-after : 1;
+	-webkit-hyphenate-limit-before : 3;
+	-moz-hyphens : manual;
+	orphans : 3;
+	widows : 3;
+}
+// Set up consistent margins for all relevent block level elements
+ul,ol,dl,
+p,
+table,
+form,
+pre,
+address, {
+	margin: 0 0 1.618em 0;
+}
+
+ul, ol {
+	padding-left:0;
+	list-style-position: inside;
+}
+
+li > ul,
+li > ol{
+	margin:0 0 0 1.618em;
+}
+
+dl {
+	dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-bottom:1.618em;
+	}
+}
+
+acronym {
+	text-decoration: underline;
+	cursor: help;
+}
+
+code {
+	.border_radius( .202em );
+	padding: .202em .53em;
+	color: @color_links;
+	font-size: .857em;
+	white-space: nowrap;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+
+ins {
+	background-color: fade(@color_links, 30%);
+	text-decoration: none;
+}
+
+pre {
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	padding: .618em 1em;
+	font-size: .857em;
+	.border_radius( .236em );
+}
+
+/*
+@font-face icons
+- Used for the subscribe & connect social icons. If you would like to add more icons to the font, you can do so by rebuilding the font at http://keyamoon.com/icomoon/app/ and replace the existing font files in the theme with the new ones.
+*/
+@font-face {
+	font-family: 'Social';
+	font-weight: normal; font-style: normal;
+	src: url('@{fontpath}/social.eot');
+	src: url('@{fontpath}/social.eot?#iefix') format('embedded-opentype'), url('includes/fonts/social.woff') format('woff'), url('includes/fonts/social.ttf') format('truetype'), url('includes/fonts/social.svg#woo-social') format('svg');
+}
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('@{fontpath}/fontawesome-webfont.eot');
+	src: url('@{fontpath}/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+	url('@{fontpath}/fontawesome-webfont.woff') format('woff'),
+	url('@{fontpath}/fontawesome-webfont.ttf') format('truetype'),
+	url('@{fontpath}/fontawesome-webfont.svg#FontAwesome') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

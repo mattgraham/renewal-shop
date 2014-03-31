@@ -1,0 +1,65 @@
+*** Hub Changelog ***
+
+2014.03.26 - version 1.1.0
+ * New - Added Projects Integration
+   includes/integrations/*,
+   single.php,
+   includes/theme-functions.php,
+   includes/theme-plugin-integrations.php
+
+
+2014.03.05 - version 1.0.2
+ * Fix - Fixes custom footer top content theme option key.
+   footer.php
+
+ * Fix - Fixes typography options.
+   includes/theme-actions.php
+
+ * Fix - Fixes testimonials theme option key.
+   includes/theme-options.php
+
+ * Fix - Fixes styling of the custom post type archives and single pages.
+   css/layout.css,
+   style.css
+
+ * Fix - Homepage slider not displaying correcly correctly on mobile devices.
+   style.css
+
+ * Fix - Fixes overlapping homepage sections on mobile devices.
+   style.css
+
+ * Fix - Adds missing social icons to Contact Page Template.
+   includes/theme-functions.php
+
+ * Tweak - Updates FitVids to version 1.1.
+   includes/js/fitvids.js
+   includes/js/fitvids.min.js
+
+2013.12.30 - version 1.0.1
+ * Fix - Fixes number of Popular Posts displayed.
+   includes/theme-options.php
+
+ * Fix - Various styling fixes.
+   style.css
+
+ * Tweak - Makes the direction navigation in the "Discover" section easier to user on handheld devices.
+   style.css
+
+ * Fix - Removes unused fields from the "Subscribe & Connect" section.
+   includes/theme-options.php
+
+ * Fix - Changes incorrect z-index value in main navigation menu.
+   style.css
+
+ * Tweak - Decreased padding on tabs.
+   style.css
+
+ * Fix - Fixes Safari bug when hovering menu items.
+   css/layout.css
+
+ * Fix - Added styling for Business template.
+   template-business.php,
+   style.css
+
+2013.12.01 - version 1.0.0
+ * First release!

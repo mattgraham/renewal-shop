@@ -1,0 +1,562 @@
+/*
+The styles in this stylesheet only apply to resolutions 768px and up
+
+CALCULATING DIMENSIONS:
+----------------------
+The layout is fluid. The sote wrapper (.col-full) has a fixed pixel max-width.
+All subsequent dimensions are calculated based on that fixed pixel width, using the formula: target / context = result
+Credit - http://www.alistapart.com/articles/fluidgrids/
+
+-----
+INDEX
+-----
+
+1. Global dropdown styles
+2. Top Navigation
+3. Main navigation dropdown menus
+ -3.1 General dropdown menus
+4. Containers & Columns
+5. Footer widgets
+6. IE Fixes
+
+/*----------------------*/
+
+@import url(mixins.less);
+@import url(imports/grid.less);
+
+/*----------------------*/
+
+@media only screen and (min-width: 768px) {
+
+	#inner-wrapper {
+		padding: 0;
+		left:0 !important; // Reset the mobile nav effects
+	}
+
+	/* 1. GLOBAL DROPDOWN STYLES (these are purely for the dropdown layout and you should only edit the width of the dropdowns) */
+	ul.nav {
+	    position: relative;
+	    margin-bottom:0;
+	    li {
+	    	position: relative;
+	    	float: left;
+	    	zoom:1;
+	    	list-style: none;
+	    	a {
+	    		display: block;
+	    		padding:.53em 1em;
+	    	}
+	    	&.parent { // Styles applied to all parent list items
+	    	}
+	    }
+	    /* LEVEL 2 */
+	    ul {
+	    	width:11.089em;
+	    	visibility: hidden;
+	    	position: absolute;
+	    	top:100%;
+	    	left: 0;
+	    	z-index: 9999;
+	    	margin:0;
+			-webkit-transition: all .25s ease;
+			-moz-transition: all .25s ease;
+			-ms-transition: all .25s ease;
+			-o-transition: all .25s ease;
+			transition: all .25s ease;
+			.opacity(0);
+	    	li {
+	    		float: none;
+	    		a {
+	    			width: 100%;
+	    			display: inline-block;
+	    			.borderbox();
+	    		}
+	    		&.parent { // Styles applied to parent items in level 2
+	    		}
+	    	}
+	    }
+	    /* LEVEL 3 */
+	    ul ul {
+	    	left:100%;
+	    	top:0;
+	    	li {
+	    		&.parent { // Styles applied to parent items in level 3
+	    		}
+	    	}
+	    }
+	    li:hover > ul {
+	    	visibility: visible;
+			.opacity(1);
+	    }
+	}
+
+	/* 2. TOP NAVIGATION (Add top navigation presentational styles here) */
+	#top {
+	    background: @bg_light;
+	    margin: 0 -1.618em;
+	    padding:0 1.618em;
+	    display: block;
+	    #top-nav, .top-navigation {
+	    	display: block;
+	    	h3 {
+	    		display: none;
+	    	}
+	    }
+	    ul.nav {
+	    	font-size:.857em; // this adjusts the scale of the entire navigation and everything just works like magic
+	    	li {
+	    		&.current-menu-item {
+	    			> a {
+	    				background: @color_links;
+	    				color: #fff;
+	    			}
+	    		}
+	    	}
+	    	> li { // The following styles are applied ONLY to the top level list items
+	    		a {
+	    			border-left: 1px solid darken( @bg_light, 10% );
+	    			&:hover {
+	    				color: @color_body;
+	    				background: darken( @bg_light, 5% );
+	    			}
+	    		}
+	    		&:hover {
+	    			background: darken( @bg_light, 5% );
+	    		}
+	    		&:last-child {
+	    			a {
+	    				border-right: 1px solid darken( @bg_light, 10% );
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 2 */
+	    	ul {
+	    		background: darken( @bg_light, 5% );
+	    		li {
+	    			a {
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 3 */
+	    	ul ul {
+	    	}
+	    	li:hover > ul {
+	    	}
+	    }
+	}
+
+	/* 3. MAIN NAVIGATION DROPDOWN MENUS (Add main navigation presentational styles here) */
+
+	/**
+	 * Resets
+	 * As the mobile nav features extensive styling, much of it needs to be reset for desktop orientation
+	 */
+	.show-nav {
+		#inner-wrapper {
+			.border_radius(0);
+		}
+		#navigation {
+			.top-navigation {
+				display: none; // Just in case someone resizes to mobile, opens the nav and then resizes to desktop
+			}
+		}
+	}
+
+	/**
+	 * The main navigation styling
+	 */
+	#navigation  {
+		position: relative;
+		left:auto;
+		width:100%;
+		margin: 0;
+		padding-top:0;
+		background: none;
+		-webkit-box-shadow:none;
+		box-shadow:none;
+		float: right;
+		width: 80%;
+		clear: none;
+		.menus { // The menu container
+			float: right;
+			.clearfix;
+			h3 {
+				display: none;
+			}
+		}
+	    ul.nav {
+	    	float: right;
+	    	> li { // The following styles are applied ONLY to the top level list items
+    			border-bottom: .146em solid transparent;
+				margin: 0 .857em;
+				text-transform: uppercase;
+	    		a {
+	    			&:hover {
+	    			}
+	    		}
+	    		&:hover {
+	    			border-color: @color_links;
+	    			a {
+	    			}
+	    		}
+	    		&.current-menu-item {
+	    			background: none;
+	    			border-color: @color_links;
+	    			a {
+	    				color: @color_nav;
+	    			}
+	    		}
+	    		&.parent {
+	    			> a {
+		    			&:after {
+		    				.iconafter("\f107");
+		    				border-bottom: .146em solid transparent;
+		    			}
+	    			}
+	    		}
+	    	}
+	    	li {  // Overwrite mobile styles
+				a {
+					padding: 0 0 .146em;
+					text-shadow:none;
+					border: 0;
+	    			color: @color_nav;
+	    			&:hover {
+	    				border-color: @color_nav;
+	    			}
+				}
+				&.current-menu-item, &.current_page_item {
+					> a {
+						background: none;
+						-webkit-box-shadow:none;
+						box-shadow:none;
+						text-shadow:none;
+						&:after {
+							display: none;
+						}
+					}
+				}
+				ul {
+					a, ul li a {
+						padding:.857em 0;
+						text-align: center;
+					}
+				}
+			}
+	    	/* LEVEL 2 */
+	    	ul {
+	    		background: none;
+	    		padding: 1.25em 0 0;
+	    		text-transform: capitalize;
+	    		.borderbox;
+				&:before {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 7px 7px 7px;
+                        border-color: transparent transparent darken( @bg_dark, 5% ) transparent;
+                        position: absolute;
+                        left: 47%;
+                        z-index: 10000;
+                        top: 13px;
+                }
+	    		li {
+	    			font-size: .857em;
+    				margin: 0;
+    				background: darken( @bg_dark, 5% );
+    				padding: 0 1em;
+	    			a {
+	    				border-bottom: .202em solid @bg_dark;
+	    				&:hover {
+	    					color: #fff;
+	    					border-bottom: .202em solid @bg_dark;
+	    				}
+	    			}
+	    			&.current-menu-item {
+	    				a {
+	    					border-bottom: .202em solid @bg_dark;
+	    				}
+	    			}
+	    			&:first-child {
+	    				.border_radius_top( .53em );
+	    			}
+	    			&:last-child {
+	    				a {
+	    					border: 0;
+	    				}
+	    				.border_radius_bottom( .53em; );
+	    			}
+	    		}
+	    	}
+	    	/* LEVEL 3 */
+	    	ul ul {
+	    		padding: 0 0 0 .327em;
+	    		top: 0;  // -1px top to offset the border and keep everything lined up
+	    		left:100%; // reapply left 100% as we're offsetting the first child by 1px
+    	    	li { font-size: 1em; }
+	    		&:before {
+	    			content: none;
+	    		}
+	    	}
+	    	li:hover > ul {
+	    	}
+	    }
+	    .widget_product_search {
+			margin-bottom:1.618em;
+			border:0;
+			#searchform {
+				border:1px solid @border_main;
+				padding:0;
+				background:none;
+				#s {
+					padding:.857em 2.618em .857em .857em;
+					.border_radius(0);
+					background: none;
+					border:0;
+					-webkit-box-shadow:none;
+					box-shadow:none;
+				}
+				#searchsubmit {
+					display: inline-block;
+				}
+			}
+		}
+	    ul.cart, ul.rss {
+	    	float: right;
+	    }
+	    .nav-close, .nav-home {
+			display: none;
+		}
+	}
+	// Hide the nav toggle link in desktop orientation
+	.nav-toggle { display: none; }
+
+	// Reset the 3d transforms
+	.csstransforms3d.csstransitions {
+		#navigation, .show-nav #navigation, .show-nav #inner-wrapper {
+			left: 0;
+			-webkit-transform: none; /* Safari and Chrome */
+			-moz-transform: none; /* Firefox */
+			-ms-transform: none; /* IE 9 */
+			-o-transform: none; /* Opera */
+			transform: none;
+		}
+	}
+
+	/* 4. CONTAINERS & COLUMNS */
+	.wrapper {
+		max-width: 75.998em;
+	    margin:0 auto;
+	    .clearfix;
+	}
+	#header {
+		position: relative;
+		.column(12);
+	    .site-header {
+	        float: left;
+	        h1, h2, h3 {
+	            float:none;
+	        }
+	    }
+	    #logo {
+	   		&:active {
+				position: absolute;
+				top: .202em;
+				.transition;
+			}
+	    }
+	    .site-title, .site-description {
+	    	text-align: left;
+	    }
+	    ul.rss {
+	        margin-right:0;
+	        padding-right:0;
+	        li {
+	            border-right:0;
+	        }
+	    }
+	}
+	#main {
+	    .column(8);
+	}
+	#main.fullwidth, .layout-full #main, #main.full-width, .breadcrumb /*.col-full*/ {
+	    .column(12);
+	}
+	#sidebar {
+	    margin-top: 0;
+	    .column(4);
+	}
+	.entry img {
+	    max-width: 100%;
+	}
+	.layout-full .entry img {
+	    max-width: 100%;
+	}
+	.layout-right-content {
+	    #main  {
+	    	float: right;
+	    }
+	    #sidebar  {
+	    	float: left;
+	    }
+	}
+	.col-left {
+	    float: left;
+	}
+	.col-right {
+	    float: right;
+	}
+	#comments {
+		.column( 7 );
+	}
+	#respond {
+		.column( 5 );
+	}
+
+	/* Single / Page */
+	.single, .archive.author {
+		#post-details {
+			&:after {
+				content: none;
+			}
+		}
+	}
+	.single {
+		article {
+			.column( 9 );
+		}
+		#post-details {
+			.column( 3 );
+		}
+	}
+
+	/* Author Archives */
+	.archive.author {
+
+		#post-details {
+			.column( 3 );
+		}
+		#main {
+			.column( 9 );
+		}
+
+	}
+
+	/* Homepage */
+	.home-section {
+ 	}
+
+
+	.page-template-template-sitemap-php  {
+		#sitemap-pages, .product-categories  {
+			float: left;
+			width: 48%;
+		}
+		#sitemap-categories , .products {
+			float: right;
+			width: 48%;
+		}
+		#sitemap-posts  {
+			clear: both;
+		}
+		.woocommerce {
+			.clearfix;
+		}
+	}
+	.page-template-template-contact-php {
+	    .location-twitter  {
+	    	.col-left  {
+	    		float: left;
+	    	}
+	    	#office-location {
+	    	    width: 48%;
+	    	    margin: 0 1em 0 0;
+	    	}
+	    	.contact-social  {
+	    	    float: left;
+	    	    width: 48%;
+	    	    #twitter  {
+	    	    	margin: 0;
+	    	    }
+	    	}
+	    }
+	}
+
+	// Tables
+	table {
+	    table-layout: fixed;
+		td,th {
+			padding:.857em 1.387em;
+		}
+		thead {
+      		th {
+      			padding:1.387em;
+      		}
+      	}
+	}
+
+	/* 5. FOOTER WIDGETS */
+	#footer-widgets {
+	    .block {
+	    	margin-right:3.8%;
+	    	float: left;
+	    }
+	    .col-1 {
+	    	.block {
+	    		width: 100%;
+	    		float: none;
+	    	}
+	    	.footer-widget-1 {
+	    		margin-right:0;
+	    	}
+	    }
+	    .col-2 {
+	    	.block {
+	    		.column(6);
+	    	}
+	    	.footer-widget-2 {
+	    		margin-right:0;
+	    	}
+	    }
+	    .col-3 {
+	    	.block {
+	    		.column(4);
+	    	}
+	    	.footer-widget-3 {
+	    		margin-right:0;
+	    	}
+	    }
+	    .col-4 {
+	    	.block {
+	    		.column(3);
+	    	}
+	    	.footer-widget-4 {
+	    		margin-right:0;
+	    	}
+	    }
+	}
+
+	#footer {
+		.col-left, .col-right {
+			.column(6);
+		}
+		.col-right {
+			text-align: right;
+		}
+	}
+
+	/* 6. IE FIXES */
+
+	.ie7 {
+	    #top-nav {
+	    	position: relative;
+	    	z-index: 9999999;
+	    }
+	    #header {
+	    	position: relative;
+	    	z-index: 9999999;
+	    }
+	}
+
+}

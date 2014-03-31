@@ -1,0 +1,87 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.widget_woothemes_our_team {
+	.team-member {
+		background: @bg_light;
+		margin-bottom:1.618em;
+		h3 {
+			font-size: 1em;
+	    	margin: 0 1em 0 0;
+		}
+		.avatar {
+			.borderbox;
+			display: block;
+			margin-bottom: 0;
+			width:100%;
+			height: auto;
+		}
+		.team-member-content {
+			padding: 1.618em;
+		}
+	}
+	.author-details {
+		list-style: none;
+		margin: 0;
+		margin-left:0 !important;
+	}
+	h3.member {
+		a {
+			&:after {
+				.iconafter( "\f08e" );
+			}
+		}
+	}
+	.role {
+		font-weight: 700;
+		font-size: .857em;
+	}
+}
+
+// Layout
+@media only screen and (min-width: 768px) {
+	.entry {
+		.widget_woothemes_our_team {
+			.columns-2, .columns-3, .columns-4, .columns-5, .columns-6 {
+				.clearfix;
+				.team-member {
+					float: left;
+					margin-right:3.8%;
+					&.first {
+						clear: both;
+					}
+					&.last {
+						margin-right:0;
+					}
+				}
+			}
+			.columns-2 {
+				.team-member {
+					width:48%;
+				}
+			}
+			.columns-3 {
+				.team-member {
+					width:30.75%;
+				}
+			}
+			.columns-4 {
+				.team-member {
+					width:22.05%;
+				}
+			}
+			.columns-5 {
+				.team-member {
+					width:16.9%;
+				}
+			}
+			.columns-6 {
+				.team-member {
+					width:13.5%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,350 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.course-container {
+	.course {
+		header {
+			margin: 0;
+		}
+	}
+}
+
+.type-course {
+	position: relative;
+	.course-meta {
+		margin-bottom: 1.618em;
+		.clearfix;
+		.status {
+			float: left;
+			margin-right: .236em;
+		}
+		.view-results {
+			float: right;
+		}
+	}
+	.lesson-number {
+		color: @color_links;
+	}
+	.sensei-course-meta, .lesson-meta {
+		margin: 0 0 1em;
+		font-size: .75em;
+		text-transform: uppercase;
+		color: lighten( @color_body, 22% );
+		a {
+			color: lighten( @color_body, 22% );
+			text-decoration: none;
+			border-bottom: .125em dashed lighten( @color_body, 30% );
+			&:hover {
+				color: lighten( @color_body, 15% );	
+				border-color: lighten( @color_body, 15% );
+			}
+		}
+		> span {
+			margin-right: .857em;
+			padding-right: .857em;
+			border-right: 1px solid @border_main;
+			&:last-child {
+				border: 0;
+			}
+		}
+	}
+	.lesson-meta {
+		font-size: .857em;
+		margin: 0;
+	}
+	img.thumbnail {
+		margin-top: .39em;
+		padding: .202em;
+		border: .125em solid @border_main;
+		.border_radius( .327em );
+	}
+	.course-lessons {
+		.lesson {
+			header {
+				margin: 0 0 1.387em;
+			}
+		}
+	}
+}
+
+.single-course, .single-quiz, .single-lesson {
+	#post-entries {
+		margin-left: 0;
+	}
+}
+#post-entries {
+	.meta-nav {
+		display: none;
+	}
+}
+
+// General Sensei elements
+.course-completion-rate {
+	display: block;
+	clear: both;
+	margin: 1.618em 0;
+	font-weight: 700;
+}
+
+.meter {
+	clear: both;
+	height: 1.618em;
+	background: @bg_light;
+	.border_radius(.202em);
+	margin-bottom: 1.618em;
+	position: relative;
+	span {
+		display: inline-block;
+		.border_radius(.202em);
+		background: @color_links;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		color: #fff;
+		font-weight: 700;
+		min-width: 2.618em;
+		.borderbox;
+		padding-right: .618em;
+		text-align: right;
+	}
+}
+
+.status {
+	display: inline-block;
+	padding: .236em .857em;
+	background: @border_main;
+	.border_radius(.202em);
+	font-weight: 700;
+	&.in-progress {
+		&:before {
+			.iconbefore;
+			content: "\f01c";
+		}
+	}
+	&.completed {
+		background: @success;
+		color: #fff;
+		&:before {
+		    .iconbefore;
+		    content: "\f05d";
+		}
+	}
+	&.register {
+		background: @info;
+		color: #fff;
+
+		&:before {
+		        .iconbefore;
+		        content: "\f007";
+		}
+	}
+}
+
+.answer_message {
+	.message("\f129", @info);
+	margin: 1em 0 !important; // redeclaring .message() overrides this so we use !important
+	&.user_right,
+	&.user_wrong {
+		color: @color_body;
+	}
+	&.user_right {
+		.message("\f05d", @success);
+	}
+	&.user_wrong {
+		.message("\f05c", @error);
+	}
+	.notes {
+		position: absolute;
+		background: @note;
+		padding: 1em;
+		.transition();
+		font-weight: normal;
+		.border_radius(.387em);
+		z-index: 9998;
+		p {
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	&.has_notes {
+		span {
+			&:after {
+				float: right;
+				.iconafter("\f05a");
+				margin-top: .327em;
+				color: @color_links;
+			}
+		}
+	}
+}
+
+.user_right {
+	color: @success;
+}
+
+.user_wrong {
+	color: @error;
+}
+
+a.view-results,
+a.view-results-link,
+a.sensei-certificate-link {
+	display: inline-block;
+	padding: .236em .857em;
+	background: @border_main;
+	.border_radius(.202em);
+	font-weight: 700;
+	&:before {
+		.iconbefore;
+		content: "\f18e";
+	}
+}
+
+p.sensei-message, div.sensei-message {
+	margin: 1.387em 0 1.618em 0;
+	padding: 1em 1.618em;
+	&.alert {
+		.message('\f071', @error);
+	}
+	&.download {
+		.message('\f019', @success);
+	}
+	&.tick {
+		.message('\f00c', @success);
+	}
+	&.info {
+		.message('\f05a', @info);
+	}
+	&.note {
+		.message('\f0f6', @note);
+	}
+	.view-quiz  {
+		float: right;
+	}	
+}
+
+.course {
+	.total-grade {
+		border-top:2px solid @border_main;
+		padding-top:1em;
+		margin-top:1em;
+	}
+	.lesson-grade {
+		float: right;
+	}
+}
+
+
+// Single Quiz
+.single-quiz {
+	.multiple-choice {
+		> span {
+			font-weight: 700;
+		}
+		ul {
+			margin-left: 0;
+			li {
+			list-style: none;
+			}
+		}
+	}
+	.lesson-course {
+		margin: 1em 0 1.618em;
+	}
+}
+
+#sensei-quiz-list {
+	margin-left:0;
+     > li {
+		margin-bottom: 2.618em;
+		padding: 1.618em;
+		border:1px solid rgba(0,0,0,0.1);
+		list-style: none;
+		.border_radius(.327em);
+		ul {
+			list-style: none;
+			margin-top: 1em;
+			margin-left:0;
+		}
+		.right_answer,
+		.wrong_answer {
+			font-weight: 700;
+		}
+	}
+}
+
+// Learner Profile
+.learner-info {
+	.avatar {
+		float: right;
+		.border_radius(.202em);
+		margin: 0 0 1.618em 1em;
+	}
+
+	& + h2 {
+		clear: both;
+	}
+}
+
+// Widgets
+.widget_sensei_category_courses,
+.widget_sensei_course_component,
+.widget_sensei_lesson_component {
+	li {
+		.clearfix;
+		margin-bottom: 1.618em;
+		list-style: none;
+	}
+	img {
+		width: 4.236em;
+		height: auto;
+		float: left;
+		.border_radius(100%);
+		margin: .327em 1.618em 1em 0;
+	}
+}
+
+// My Courses
+#my-courses {
+	.ui-tabs-nav {
+		margin-left: 0;
+		border-bottom: .146em solid @border_main;
+		li {
+			list-style: none;
+			display: inline-block;
+			&:first-child {
+				margin-left: .53em;
+			}
+			a {
+				position: relative;			
+				display: block;
+				border-width: .146em .146em 0 .146em;
+				border-style: solid;
+				border-color: @border_main;
+				.border_radius_top( .53em );
+				padding: .4em .618em;
+				margin-right: .618em;
+				color: @color_body;
+			}
+			&.ui-state-active {
+				a {
+					color: @color_links;
+					&:after {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 100%;
+						width: 100%;
+						height: .327em;
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+}

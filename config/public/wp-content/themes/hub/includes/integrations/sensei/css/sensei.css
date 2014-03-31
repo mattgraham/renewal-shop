@@ -1,0 +1,706 @@
+/**
+ * Integration styles
+ */
+@-webkit-keyframes spin-360 {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    zoom: 1;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    zoom: 1;
+  }
+  to {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    zoom: 1;
+  }
+}
+.course-container .course header {
+  margin: 0;
+}
+.type-course {
+  position: relative;
+}
+.type-course .course-meta {
+  margin-bottom: 1.618em;
+}
+.type-course .course-meta:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.type-course .course-meta .status {
+  float: left;
+  margin-right: .236em;
+}
+.type-course .course-meta .view-results {
+  float: right;
+}
+.type-course .lesson-number {
+  color: #f36557;
+}
+.type-course .sensei-course-meta,
+.type-course .lesson-meta {
+  margin: 0 0 1em;
+  font-size: .75em;
+  text-transform: uppercase;
+  color: #bec0c2;
+}
+.type-course .sensei-course-meta a,
+.type-course .lesson-meta a {
+  color: #bec0c2;
+  text-decoration: none;
+  border-bottom: 0.125em dashed #d3d4d6;
+}
+.type-course .sensei-course-meta a:hover,
+.type-course .lesson-meta a:hover {
+  color: #acaeb1;
+  border-color: #acaeb1;
+}
+.type-course .sensei-course-meta > span,
+.type-course .lesson-meta > span {
+  margin-right: .857em;
+  padding-right: .857em;
+  border-right: 1px solid #e6e6e6;
+}
+.type-course .sensei-course-meta > span:last-child,
+.type-course .lesson-meta > span:last-child {
+  border: 0;
+}
+.type-course .lesson-meta {
+  font-size: .857em;
+  margin: 0;
+}
+.type-course img.thumbnail {
+  margin-top: .39em;
+  padding: .202em;
+  border: 0.125em solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.type-course .course-lessons .lesson header {
+  margin: 0 0 1.387em;
+}
+.single-course #post-entries,
+.single-quiz #post-entries,
+.single-lesson #post-entries {
+  margin-left: 0;
+}
+#post-entries .meta-nav {
+  display: none;
+}
+.course-completion-rate {
+  display: block;
+  clear: both;
+  margin: 1.618em 0;
+  font-weight: 700;
+}
+.meter {
+  clear: both;
+  height: 1.618em;
+  background: #f5f5f4;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-bottom: 1.618em;
+  position: relative;
+}
+.meter span {
+  display: inline-block;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #f36557;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: #fff;
+  font-weight: 700;
+  min-width: 2.618em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: .618em;
+  text-align: right;
+}
+.status {
+  display: inline-block;
+  padding: .236em .857em;
+  background: #e6e6e6;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-weight: 700;
+}
+.status.in-progress:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1;
+  content: "\f179";
+  content: "\f01c";
+}
+.status.completed {
+  background: #89b93f;
+  color: #fff;
+}
+.status.completed:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1;
+  content: "\f179";
+  content: "\f05d";
+}
+.status.register {
+  background: #3c8bae;
+  color: #fff;
+}
+.status.register:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1;
+  content: "\f179";
+  content: "\f007";
+}
+.answer_message {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+  margin: 1em 0 !important;
+}
+.answer_message:before {
+  font-family: 'FontAwesome';
+  content: "\f129";
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #3c8bae;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+.answer_message.user_right,
+.answer_message.user_wrong {
+  color: #84878c;
+}
+.answer_message.user_right {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+.answer_message.user_right:before {
+  font-family: 'FontAwesome';
+  content: "\f05d";
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #89b93f;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+.answer_message.user_wrong {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+.answer_message.user_wrong:before {
+  font-family: 'FontAwesome';
+  content: "\f05c";
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #c84e45;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+.answer_message .notes {
+  position: absolute;
+  background: #d3b42a;
+  padding: 1em;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+  font-weight: normal;
+  -webkit-border-radius: 0.387em;
+  border-radius: 0.387em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  z-index: 9998;
+}
+.answer_message .notes p:last-child {
+  margin: 0;
+}
+.answer_message.has_notes span:after {
+  float: right;
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  text-align: right;
+  line-height: 1;
+  content: "\f05a";
+  margin-top: .327em;
+  color: #f36557;
+}
+.user_right {
+  color: #89b93f;
+}
+.user_wrong {
+  color: #c84e45;
+}
+a.view-results,
+a.view-results-link,
+a.sensei-certificate-link {
+  display: inline-block;
+  padding: .236em .857em;
+  background: #e6e6e6;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-weight: 700;
+}
+a.view-results:before,
+a.view-results-link:before,
+a.sensei-certificate-link:before {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  speak: none;
+  width: 1.5em;
+  display: inline-block;
+  line-height: 1;
+  content: "\f179";
+  content: "\f18e";
+}
+p.sensei-message,
+div.sensei-message {
+  margin: 1.387em 0 1.618em 0;
+  padding: 1em 1.618em;
+}
+p.sensei-message.alert,
+div.sensei-message.alert {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+p.sensei-message.alert:before,
+div.sensei-message.alert:before {
+  font-family: 'FontAwesome';
+  content: '\f071';
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #c84e45;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+p.sensei-message.download,
+div.sensei-message.download {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+p.sensei-message.download:before,
+div.sensei-message.download:before {
+  font-family: 'FontAwesome';
+  content: '\f019';
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #89b93f;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+p.sensei-message.tick,
+div.sensei-message.tick {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+p.sensei-message.tick:before,
+div.sensei-message.tick:before {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #89b93f;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+p.sensei-message.info,
+div.sensei-message.info {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+p.sensei-message.info:before,
+div.sensei-message.info:before {
+  font-family: 'FontAwesome';
+  content: '\f05a';
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #3c8bae;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+p.sensei-message.note,
+div.sensei-message.note {
+  padding: 1em 1.618em 1em 5.874em;
+  margin-bottom: 2.618em;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  clear: both;
+}
+p.sensei-message.note:before,
+div.sensei-message.note:before {
+  font-family: 'FontAwesome';
+  content: '\f0f6';
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.618em;
+  background: #d3b42a;
+  text-align: center;
+  padding: .53em .236em;
+  font-size: 1.387em;
+  font-weight: normal;
+  -webkit-border-top-left-radius: 0.236em;
+  -webkit-border-bottom-left-radius: 0.236em;
+  border-top-left-radius: 0.236em;
+  border-bottom-left-radius: 0.236em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -1px;
+}
+p.sensei-message .view-quiz,
+div.sensei-message .view-quiz {
+  float: right;
+}
+.course .total-grade {
+  border-top: 2px solid #e6e6e6;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+.course .lesson-grade {
+  float: right;
+}
+.single-quiz .multiple-choice > span {
+  font-weight: 700;
+}
+.single-quiz .multiple-choice ul {
+  margin-left: 0;
+}
+.single-quiz .multiple-choice ul li {
+  list-style: none;
+}
+.single-quiz .lesson-course {
+  margin: 1em 0 1.618em;
+}
+#sensei-quiz-list {
+  margin-left: 0;
+}
+#sensei-quiz-list > li {
+  margin-bottom: 2.618em;
+  padding: 1.618em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  list-style: none;
+  -webkit-border-radius: 0.327em;
+  border-radius: 0.327em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#sensei-quiz-list > li ul {
+  list-style: none;
+  margin-top: 1em;
+  margin-left: 0;
+}
+#sensei-quiz-list > li .right_answer,
+#sensei-quiz-list > li .wrong_answer {
+  font-weight: 700;
+}
+.learner-info .avatar {
+  float: right;
+  -webkit-border-radius: 0.202em;
+  border-radius: 0.202em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin: 0 0 1.618em 1em;
+}
+.learner-info + h2 {
+  clear: both;
+}
+.widget_sensei_category_courses li,
+.widget_sensei_course_component li,
+.widget_sensei_lesson_component li {
+  margin-bottom: 1.618em;
+  list-style: none;
+}
+.widget_sensei_category_courses li:after,
+.widget_sensei_course_component li:after,
+.widget_sensei_lesson_component li:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.widget_sensei_category_courses img,
+.widget_sensei_course_component img,
+.widget_sensei_lesson_component img {
+  width: 4.236em;
+  height: auto;
+  float: left;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin: .327em 1.618em 1em 0;
+}
+#my-courses .ui-tabs-nav {
+  margin-left: 0;
+  border-bottom: 0.146em solid #e6e6e6;
+}
+#my-courses .ui-tabs-nav li {
+  list-style: none;
+  display: inline-block;
+}
+#my-courses .ui-tabs-nav li:first-child {
+  margin-left: .53em;
+}
+#my-courses .ui-tabs-nav li a {
+  position: relative;
+  display: block;
+  border-width: .146em .146em 0 .146em;
+  border-style: solid;
+  border-color: #e6e6e6;
+  -webkit-border-top-left-radius: 0.53em;
+  -webkit-border-top-right-radius: 0.53em;
+  border-top-left-radius: 0.53em;
+  border-top-right-radius: 0.53em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: .4em .618em;
+  margin-right: .618em;
+  color: #84878c;
+}
+#my-courses .ui-tabs-nav li.ui-state-active a {
+  color: #f36557;
+}
+#my-courses .ui-tabs-nav li.ui-state-active a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: .327em;
+  background: #fff;
+}

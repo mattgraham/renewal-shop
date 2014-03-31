@@ -1,0 +1,259 @@
+/**
+ * Projects
+ *
+ * Styles which integrate this with with Projects.
+ * This stylesheet is only enqueued if Projects is activated.
+ * http://wordpress.org/plugins/projects-by-woothemes/
+ */
+
+@import url(../../../../css/mixins.less);
+
+// Layout
+.projects,
+.projects-page {
+	ul.projects {
+		.clearfix;
+		list-style: none;
+
+		li.project {
+			width: 48%;
+			float: left;
+			clear: both;
+			margin-bottom: 1.618em;
+
+			img {
+				display: block;
+				height: auto;
+				margin-bottom: 1em;
+			}
+
+			&:nth-child(2n) {
+				margin-right: 0;
+				float: right;
+				clear: none;
+			}
+		}
+	}
+
+	.single-featured,
+	.gallery {
+		margin-bottom: 1.618em;
+	}
+
+	&.has-gallery {
+		.gallery {
+			img {
+				height: auto;
+				margin-bottom: 1.618em;
+			}
+		}
+	}
+
+	.project-meta {
+		.clearfix;
+
+		.categories,
+		.client,
+		.url {
+			margin-bottom: 1.618em;
+		}
+
+		> div {
+			width: 48%;
+			float: left;
+			clear: both;
+
+			&:nth-child(2n) {
+				float: right;
+				clear: none;
+			}
+		}
+
+		.single-project-categories {
+			list-style: none;
+			margin-bottom: 0;
+
+			li {
+				&:before {
+					.iconbefore( "\f07b" );
+				}
+			}
+		}
+
+		.client {
+			.client-name {
+				&:before {
+					.iconbefore( "\f007" );
+				}
+			}
+		}
+
+		.url {
+			.project-url {
+				&:before {
+					.iconbefore( "\f14c" );
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Widgets
+ */
+.widget_projects_items,
+.widget_projects_categories {
+	li {
+		.clearfix;
+		padding-bottom: 1em;
+		margin-bottom: 1em;
+		border-bottom: 1px solid fade( @border_main, 50% );
+
+		&:last-child {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border-bottom: 0;
+		}
+	}
+}
+
+.widget_projects_items {
+	img {
+		width: 2.618em;
+		height: auto;
+		float: right;
+	}
+}
+
+.widget_projects_categories {
+	li {
+		list-style: none;
+
+		&:before {
+			.iconbefore( "\f07b" );
+		}
+	}
+
+	ul.children {
+		padding-top: 1em;
+
+		li {
+			&:before {
+				.iconbefore( "\f114" );
+			}
+
+			&:first-child {
+				border-top: 1px solid fade( @border_main, 50% );
+				padding-top: 1em;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.projects,
+	.projects-page {
+		&.no-gallery {
+			.summary {
+				.clearfix;
+
+				.single-project-description {
+					float: right;
+					width: 65.45%;
+				}
+
+				.project-meta {
+					float: left;
+					width: 30.75%;
+				}
+			}
+
+			.project-meta {
+				> div {
+					width: auto;
+					float: none;
+					clear: none;
+				}
+			}
+		}
+
+		&.has-gallery {
+			.project {
+				.clearfix;
+			}
+
+			.gallery {
+				width: 39.45%;
+				float: left;
+			}
+
+			.summary {
+				width: 56.75%;
+				float: right;
+			}
+		}
+
+		#post-entries {
+			margin-left: 0;
+		}
+	}
+
+	.projects {
+		&.columns-2,
+		&.columns-3,
+		&.columns-4,
+		&.columns-5,
+		&.columns-6 {
+			.clearfix;
+
+			ul.projects li.project {
+				float: left;
+				margin-right: 3.8%;
+				clear: none;
+
+				&.first {
+					clear: both;
+				}
+
+				&.last {
+					margin-right: 0;
+				}
+
+				&:nth-child(2) {
+					float: left;
+					clear: none;
+				}
+			}
+		}
+
+		&.columns-2 {
+			ul.projects li.project {
+				width: 48%;
+			}
+		}
+
+		&.columns-3 {
+			ul.projects li.project {
+				width: 30.75%;
+			}
+		}
+
+		&.columns-4 {
+			ul.projects li.project {
+				width: 22.05%;
+			}
+		}
+
+		&.columns-5 {
+			ul.projects li.project {
+				width: 16.9%;
+			}
+		}
+
+		&.columns-6 {
+			ul.projects li.project {
+				width: 13.5%;
+			}
+		}
+	}
+}

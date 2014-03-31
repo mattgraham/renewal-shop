@@ -1,0 +1,333 @@
+/* General */
+.widget  {
+	margin-bottom: 2.244em;
+	h3 {
+		padding: 0 0 .382em;
+		margin: 0 0 1.327em;
+		font-size: 1.1em;
+		text-transform: uppercase;
+	}
+	ul {
+		clear: both;
+		list-style: none;
+		li {
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+/* Search Form */
+.search_main {
+	display: inline-block;
+}
+#searchform  {
+	overflow: hidden;
+	width: 100%;
+	.borderbox();
+	position: relative;
+	border: .146em solid @border_main;
+	.border_radius( 2.618em );
+	.s, #s { padding: .857em 2.618em .857em 1.618em; width:100%; .borderbox(); margin:0; border:0; background: none; color: @color_body; }
+	.search-submit, #searchsubmit {
+		position: absolute; top:35%; right: 1.387em; border: none; overflow: hidden; margin:0; padding: 20px 0 0; width: 20px; height: 0; background: url('@{imagepath}/ico-search.png') no-repeat left top; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;
+		&:active  { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+		&:hover  { background: url('@{imagepath}/ico-search.png') no-repeat left top; }
+	}
+	label { display: none; }
+}
+.widget_search {
+	#searchform {
+		margin: 0;
+	}
+}
+
+/* Flickr */
+.widget_woo_flickr {
+	h3 {
+		span {
+			color:#0051d8;
+			span {
+				color:#ff1183;
+			}
+		}
+	}
+	.wrap  {
+		margin: 1em 0 0;
+		.flickr_badge_image {
+			display: inline-block;
+			margin: 0 1em 1em 0;
+			a {
+				img {
+					display: block;
+					padding: .236em;
+					border: 1px solid @border_main;
+					.border_radius(300px);
+				}
+			}
+		}
+	}
+}
+
+/* Calendar */
+#wp-calendar{
+	caption {
+		padding:1em;
+	}
+	th, td {
+		text-align: center;
+		padding: .53em 0;
+	}
+}
+
+/* Author Info */
+.widget_woo_blogauthorinfo {
+	.avatar {
+		padding: .236em;
+		border: 1px solid @border_main;
+		.border_radius( 100% );
+	}
+	.left {
+		float: left;
+		margin:0 1em .618em 0;
+	}
+	.right {
+		float: right;
+		margin:0 .618em 1em;
+	}
+}
+
+/* Tabs */
+.widget_woodojo_tabs, .woocommerce_tabs, .woocommerce-tabs {
+	clear:both;
+	ul.nav-tabs, ul.tabs {
+		margin: 0;
+		list-style: none;
+		border-bottom: .146em solid @border_main;
+		.clearfix;
+		li {
+			float: left;
+			margin-bottom:0;
+			margin-right: .53em;
+			display: block;
+			a {
+				border-bottom:0;
+				background: fade(@border_main, 40%);
+				border: .146em solid @border_main;
+				border-bottom-width:0;
+				display: block;
+				color: @color_body;
+				margin:0 !important;
+				padding:.53em .618em !important;
+				.border_radius_top( .53em );
+				text-decoration: none;
+				&:hover {
+					color: @color_links;
+				}
+			}
+			&:last-child {
+				a {
+					border-right-width: .146em;
+				}
+			}
+			&.active {
+				position: relative;
+				a {
+					border-width: .146em !important;
+					border-bottom-width:0 !important;
+					position: relative;
+					background: #fff;
+					color: @color_links;
+					&:after {
+						content: "";
+						display: block;
+						position: absolute;
+						bottom:-4px;
+						left:0;
+						right:0;
+						height:4px;
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+	.tab-content {
+		padding: 1em;
+		border: .146em solid @border_main;
+		border-top-width:0;
+		.border_radius_bottom( .53em );
+		ul {
+			li {
+				padding: 0 0 1em !important;
+				margin: 0 0 1em !important;
+				border-bottom: .102em solid @border_main;
+				img {
+					border-radius: 100%;
+				}
+				&:last-child {
+					margin: 0 !important;
+					padding: 0 !important;
+					border: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Twitter */
+.widget_woodojo_tweets {
+	ul {
+		&.tweets {
+			li {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				.time-ago {
+					margin: .618em 0 0;
+					display: block;
+					a {
+						text-transform: uppercase;
+						color: lighten( @color_body, 22% );
+						text-decoration: none;
+						border-bottom: .125em dashed transparent;
+						&:hover {
+							color: lighten( @color_body, 15% );
+							border-color: lighten( @color_body, 30% );
+						}
+					}
+				}
+				&:after {
+					content: '';
+					display: block;
+					margin: 1.618em 0;
+					width: 20%;
+					height: .202em;
+					background: @border_main;
+				}
+				&:last-child {
+					margin: 0 0 1.387em;
+					&:after {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Instagram */
+.widget_woodojo_instagram {
+	margin-bottom: 1.2em;
+	ul {
+		li {
+			img {
+				display: block;
+				padding: .236em;
+				border: 1px solid @border_main;
+				.border_radius(300px);
+			}
+		}
+	}
+}
+
+/* Instagram Profile */
+.widget_woodojo_twitterprofile, .widget_woodojo_instagram_profile {
+	.avatar {
+		display: block;
+		padding: .236em;
+		border: 1px solid @border_main;
+		.border_radius(300px);
+	}
+}
+
+/* Twitter Profile */
+.widget_woodojo_twitterprofile {
+	.profile-info {
+		margin: 1.387em 0;
+		clear: both;
+	}
+	.tweeting-since {
+		margin: 1.618em 0;
+		background: none;
+	}
+}
+
+/* Footer Widgets */
+#footer-widgets {
+	.widget {
+		h3 {
+			color: #fff;
+		}
+		ul {
+			list-style: none;
+			li {
+				border-bottom: .09em solid lighten( @bg_dark, 5% );
+				padding: 0 0 .618em;
+				margin: 0 0 .618em;
+				&:last-child {
+					margin: 0;
+				}
+				a {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	#searchform  {
+		border-color: lighten( @bg_dark, 5% );
+	}
+	.widget_woo_flickr {
+		.wrap  {
+			.flickr_badge_image {
+				a {
+					img {
+						border-color: lighten( @bg_dark, 5% );
+					}
+				}
+			}
+		}
+	}
+	.widget_woodojo_instagram {
+		ul {
+			li {
+				img {
+					border-color: lighten( @bg_dark, 5% );
+				}
+			}
+		}
+	}
+	.widget_woodojo_twitterprofile, .widget_woodojo_instagram_profile {
+		.avatar {
+			border-color: lighten( @bg_dark, 5% );
+		}
+	}
+	.widget_woodojo_tweets {
+		ul {
+			&.tweets {
+				li {
+					padding: 0 0 1.387em;
+					margin: 0 0 1.387em;
+					&:after {
+						content: none;
+					}
+					&:last-child {
+						border: 0;
+						margin: 0 0 1em;
+					}
+				}
+			}
+		}
+	}
+	.widget_woo_blogauthorinfo {
+		.avatar {
+			border-color: lighten( @bg_dark, 5% );
+		}
+	}
+}

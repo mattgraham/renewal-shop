@@ -1,0 +1,75 @@
+/**
+ * Integration styles
+ */
+@import url(../../../../css/mixins.less);
+
+.widget_woothemes_features  {
+	.feature {
+		background: @bg_light;
+	    width: 100%;
+	    list-style: none;
+	    margin-bottom: 2.618em;
+	    float: left;
+	    h3 {
+	    	font-size: 1em;
+	    	margin: 1.618em 1.618em .53em 1.618em;
+	    }
+	    .feature-content {
+	    	padding: 0 1.618em 1.618em 1.618em;
+	    }
+	    img {
+	    	display: block;
+	    	margin: 0 auto;
+	    	height: auto;
+	    }
+	}
+}
+
+// Layout
+@media only screen and (min-width: 768px) {
+	#content {
+		.widget_woothemes_features {
+			h3 {
+				text-transform: none;
+			}
+			.columns-2, .columns-3, .columns-4, .columns-5, .columns-6 {
+				.clearfix;
+				.feature {
+					float: left;
+					margin-right:3.8%;
+					&.first {
+						clear: both;
+					}
+					&.last {
+						margin-right:0;
+					}
+				}
+			}
+			.columns-2 {
+				.feature {
+					width:48%;
+				}
+			}
+			.columns-3 {
+				.feature {
+					width:30.75%;
+				}
+			}
+			.columns-4 {
+				.feature {
+					width:22.05%;
+				}
+			}
+			.columns-5 {
+				.feature {
+					width:16.9%;
+				}
+			}
+			.columns-6 {
+				.feature {
+					width:13.5%;
+				}
+			}
+		}
+	}
+}
