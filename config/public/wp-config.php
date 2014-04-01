@@ -32,6 +32,10 @@ define("DB_PASSWORD", trim($url["pass"]));
 
 /** MySQL hostname */
 define("DB_HOST", trim($url["host"]));
+
+/** Get AWS Keys from Heroku config */
+define("AWS_ACCESS_KEY_ID", getenv('AWS_ACCESS_KEY_ID'));
+define("AWS_SECRET_ACCESS_KEY", getenv('AWS_SECRET_ACCESS_KEY'));
 // define("DB_HOST", "us-cdbr-east-03.cleardb.com");
 
 /** MySQL database port  */
