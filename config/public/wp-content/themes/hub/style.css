@@ -5174,12 +5174,6 @@ ul.nav li.current-menu-item > a {
   margin: 0 .618em 1em;
 }
 /* Tabs */
-.widget_woodojo_tabs,
-.woocommerce_tabs,
-.woocommerce-tabs {
-  float: right;
-  width: 48%;
-}
 .widget_woodojo_tabs ul.nav-tabs,
 .woocommerce_tabs ul.nav-tabs,
 .woocommerce-tabs ul.nav-tabs,
